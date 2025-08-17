@@ -56,7 +56,7 @@ def chatAnalysis(messages):
     print(answer)
     dt_format = '%Y-%m-%d %H-%M'
     now_utc = datetime.now()
-    with open(f"report {now_utc:{dt_format}}.md", "w") as file:
+    with open(f"Reports\\report {now_utc:{dt_format}}.md", "w") as file:
         file.write(answer)
 
 
