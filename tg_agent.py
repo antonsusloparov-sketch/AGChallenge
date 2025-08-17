@@ -14,6 +14,7 @@ load_dotenv(find_dotenv())
 
 # Инициализация GigaChat
 model = GigaChat(streaming=False,
+                 # model='GigaChat-2-Max',
                  max_tokens=8000,
                  timeout=600,
                  credentials=credentials.api_key)
