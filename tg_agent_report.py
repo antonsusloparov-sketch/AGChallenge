@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 from datetime import datetime, timezone, timedelta, UTC
+import pathlib
 
 answer = (f"### Рекомендации участникам:\n"
         "\n"
@@ -9,5 +12,8 @@ answer = (f"### Рекомендации участникам:\n"
         "- Обратиться к технической поддержке провайдера сервисов для помощи с настройкой инфраструктуры.")
 dt_format = '%Y-%m-%d %H-%M'
 now_utc = datetime.now()
-with open(f"Reports\\report {now_utc:{dt_format}}.md", "w") as file:
+p = pathlib.Path(__file__)
+p = p.parents[0].joinpath('Reports',f'report {now_utc:{dt_format}}.md')
+print(p)
+with open(p, "w") as file:
     file.write(answer)
